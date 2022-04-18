@@ -1,4 +1,4 @@
-#include "SqList.h"
+#include "sqList.h"
 
 void InitList(SqList *list, int initSize)
 {
