@@ -1,6 +1,8 @@
 #include "unit_test.h"
+#include <stdbool.h>
+#include <stdio.h>
 
-void Equals(int a, int b)
+void IntEquals(int a, int b)
 {
     if (a == b)
     {
@@ -34,4 +36,17 @@ void ArrayEquals(int *a, int *b, int length)
         }
     }
     printf("array a equals array b");
+}
+
+void BoolEquals(bool a, bool b)
+{
+    if (a == b)
+    {
+        printf("a equals b");
+    }
+    else
+    {
+        printf("a not equals b");
+    }
+    
 }
