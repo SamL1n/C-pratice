@@ -81,6 +81,8 @@ LNode *LocateElem(LinkList L, ElemType e)
 //前插法
 bool InsertNode_before(LinkList L, int i, ElemType e)
 {
+    if(i < 1)
+        return false;
     LNode *node;
     GetElem(L, i, node);
     if (node == NULL)
