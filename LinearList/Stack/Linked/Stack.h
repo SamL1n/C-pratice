@@ -1,10 +1,11 @@
+typedef int ElemType;
 #include <stdlib.h>
 #include <stdbool.h>
 
 //不带头结点的链栈
 typedef struct
 {
-    int value;
+    ElemType value;
     LNode *next;
 } LNode, *StackList;
 
@@ -13,7 +14,7 @@ void InitStack(StackList s)
     s = NULL;
 }
 
-bool Push(StackList s, int value)
+bool Push(StackList s, ElemType value)
 {
     LNode *node = (LNode *)malloc(sizeof(LNode));
     if (s == NULL)
@@ -43,7 +44,7 @@ bool Pop(StackList s)
     return true;
 }
 
-bool Get(StackList s, int *n)
+bool Get(StackList s, ElemType *e)
 {
     if (s == NULL)
     {
@@ -51,7 +52,7 @@ bool Get(StackList s, int *n)
     }
     else
     {
-        *n = s->value;
+        *e = s->value;
         return true;
     }
 }
