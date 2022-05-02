@@ -1,9 +1,10 @@
+typedef int ElemType;
 #include <stdbool.h>
 #include <stdlib.h>
 
 typedef struct
 {
-    int value;
+    ElemType value;
     LNode *next;
 } LNode, *StackList;
 
@@ -13,7 +14,7 @@ void InitStack(StackList s)
     s->next = NULL;
 }
 
-bool Push(StackList s, int value)
+bool Push(StackList s, ElemType value)
 {
     LNode *node;
     node = (LNode *)malloc(sizeof(LNode));
@@ -40,13 +41,13 @@ bool Pop(StackList s)
     return true;
 }
 
-bool Get(StackList s, int *n)
+bool Get(StackList s, ElemType *e)
 {
     if (s->next == NULL)
     {
         return false;
     }
-    *n = s->next->value;
+    *e = s->next->value;
     return true;
 }
 
