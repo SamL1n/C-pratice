@@ -17,13 +17,14 @@ void InitLisk(LinkList L)
 }
 
 //头插法建立链表
-LinkList List_HeadInsert(LinkList L)
+LinkList List_HeadInsert(LinkList L, ElemType *arr, int length)
 {
     InitLisk(L);
     LNode *node;
     ElemType e;
-    while (scanf("%d", &e), e != 9999)
+    for (int i = 0; i < length; i++)
     {
+        e = arr[i];
         node = (LNode *)malloc(sizeof(LNode));
         node->value = e;
         node->next = L->next;
@@ -34,14 +35,15 @@ LinkList List_HeadInsert(LinkList L)
 }
 
 //尾插法建立链表
-LinkList List_TailInsert(LinkList L)
+LinkList List_TailInsert(LinkList L, ElemType *arr, int length)
 {
     InitLisk(L);
     LNode *tail = L;
     LNode *node;
     ElemType e;
-    while (scanf("%d", &e), e != 9999)
+    for (int i = 0; i < length; i++)
     {
+        e = arr[i];
         node = (LNode *)malloc(sizeof(LNode));
         node->value = e;
         node->next = NULL;
