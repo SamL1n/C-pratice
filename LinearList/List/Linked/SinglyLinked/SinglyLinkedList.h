@@ -17,37 +17,38 @@ void InitList(LinkList L)
 }
 
 //头插法建立单链表
-LinkList List_HeadInsert(LinkList L)
+LinkList List_HeadInsert(LinkList L, ElemType *arr, int length)
 {
     L = (LNode *)malloc(sizeof(LNode));
     L->next = NULL; //保证链表最后一个元素的next指针为空
     LNode *node;
-    ElemType n;
-    while (scanf("%d", &n), n != 9999)
+    ElemType e;
+    for (int i = 0; i < length; i++)
     {
+        e = arr[i];
         node = (LNode *)malloc(sizeof(LNode));
-        node->data = n;
+        node->data = e;
         node->next = L->next;
         L->next = node;
     }
+    return L;
 }
 
 //尾插法建立单链表
-LinkList List_TailInsert(LinkList L)
+LinkList List_TailInsert(LinkList L, ElemType *arr, int length)
 {
-    ElemType n;
     L = (LNode *)malloc(sizeof(LNode));
-    LNode *node;
-    LNode *last_node = L;
-
-    while (scanf("%d", &n), n != 9999)
+    LNode *node = L;
+    LNode *new_node;
+    for (int i = 0; i < length; i++)
     {
-        node = (LNode *)malloc(sizeof(LNode));
-        node->data = n;
-        last_node->next = node;
-        last_node = node;
+        new_node = (LNode *)malloc(sizeof(LNode));
+        new_node->data = arr[i];
+        new_node->next = NULL;
+        node->next = new_node;
+        node = new_node;
     }
-    last_node->next = NULL;
+    
     return L;
 }
 
