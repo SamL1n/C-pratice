@@ -1,12 +1,13 @@
 typedef int ElemType;
 #include <stdlib.h>
 #include <stdio.h>
+#include <stdbool.h>
 
-typedef struct
+typedef struct LNode
 {
     ElemType value;
-    LNode *prior;
-    LNode *next;
+    struct LNode *prior;
+    struct LNode *next;
 } LNode, *LinkList;
 
 void InitLisk(LinkList L)
